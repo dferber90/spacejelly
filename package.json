@@ -1,0 +1,22 @@
+{
+  "name": "spacejelly",
+  "version": "1.0.0",
+  "description": "Run nightwatch tests on Meteor projects.",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nightwatch",
+    "meteor"
+  ],
+  "author": "Dominik Ferber",
+  "license": "MIT",
+  "preferGlobal": true,
+  "directories": {
+    "bin": "./bin"
+  },
+  "dependencies": {
+    "optimist": "^0.6.1"
+  }
+}
