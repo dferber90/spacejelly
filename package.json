@@ -17,6 +17,18 @@
     "bin": "./bin"
   },
   "dependencies": {
-    "optimist": "^0.6.1"
+    "nightwatch": "^0.5.35",
+    "optimist": "^0.6.1",
+    "phantomjs": "^1.9.13",
+    "temp-write": "^1.1.0",
+    "underscore": "^1.7.0"
+  },
+  "bugs": {
+    "url": "https://github.com/dferber90/spacejelly/issues",
+    "email": "dominik.ferber@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dferber90/spacejelly/"
   }
 }
