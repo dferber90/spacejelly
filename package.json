@@ -17,11 +17,16 @@
     "bin": "./bin"
   },
   "dependencies": {
+    "chai": "^1.10.0",
+    "loglevel": "^1.2.0",
     "nightwatch": "^0.5.35",
     "optimist": "^0.6.1",
     "phantomjs": "^1.9.13",
+    "psext": "0.0.4",
+    "rc": "^0.5.4",
     "temp-write": "^1.1.0",
-    "underscore": "^1.7.0"
+    "underscore": "^1.7.0",
+    "underscore.string": "^2.4.0"
   },
   "bugs": {
     "url": "https://github.com/dferber90/spacejelly/issues",
