@@ -8,7 +8,7 @@ module.exports = {
 	// if so, nightwatch.selenium.server_path will be replaced
 	"replaceSeleniumPath": true, 
 
-	"timeout": false, // not implemented yet. timeout for tests
+	"timeout": false, // timeout for tests in seconds
 
 	"meteor": {
 		"rootUrl": "http://localhost",
