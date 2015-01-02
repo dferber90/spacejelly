@@ -6,13 +6,13 @@ module.exports = {
 
 	// should spacejelly set the selenium-server-{..}.jar path?
 	// if so, nightwatch.selenium.server_path will be replaced
-	"replaceSeleniumPath": true,
+	"replaceSeleniumPath": true, 
 
 	"timeout": false, // not implemented yet. timeout for tests
 
 	"meteor": {
-		"rootUrl": "http://localhost", // ✓
-		"port": 4096, // ✓
+		"rootUrl": "http://localhost",
+		"port": 4096,
 		"mongoUrl": "",
 		"production": true,
 		"release": false,
