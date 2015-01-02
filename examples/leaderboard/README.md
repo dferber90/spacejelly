@@ -8,7 +8,7 @@ Spacejelly will start the Meteor app, start a Selenium Server and run the Nightw
 
 ## Config
 The config for spacejelly is in `tests/spacejelly/spacejelly.js`.
-Please note that some parts of the config under the `nightwatch` key may be overridden by spacejelly.
+Please note that some parts of the config under the `nightwatch` key may be overwritten by spacejelly.
 
 
 
