@@ -11,12 +11,12 @@ module.exports = {
 	"timeout": false, // not implemented yet. timeout for tests
 
 	"meteor": {
-		"rootUrl": "http://localhost:4096/",
-		"port": 4096,
+		"rootUrl": "http://localhost", // ✓
+		"port": 4096, // ✓
 		"mongoUrl": "",
 		"production": true,
 		"release": false,
-		"settingsPath": false // runs meteor with --settings <settingsPath>
+		"settings": false // Path of settings file. Runs meteor with --settings <settings>
 	},
 
 	"nightwatch": {
