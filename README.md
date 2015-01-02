@@ -1,5 +1,7 @@
 **THIS IS STILL BEING WORKED ON. DO NOT USE YET.**
 
+[![Build Status](https://travis-ci.org/dferber90/spacejelly.svg?branch=master)](https://travis-ci.org/dferber90/spacejelly)
+
 # Spacejelly
 
 An npm package to run end-to-end tests on your Meteor app.
