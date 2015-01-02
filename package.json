@@ -23,7 +23,6 @@
     "optimist": "^0.6.1",
     "phantomjs": "^1.9.13",
     "psext": "0.0.4",
-    "rc": "^0.5.4",
     "strip-json-comments": "^1.0.2",
     "temp-write": "^1.1.0",
     "underscore": "^1.7.0",
