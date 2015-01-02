@@ -4,7 +4,7 @@
   "description": "Run nightwatch tests on Meteor projects.",
   "main": "lib/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --colors --reporter spec tests/lib/*"
   },
   "keywords": [
     "nightwatch",
@@ -35,5 +35,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/dferber90/spacejelly/"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0",
+    "sinon": "^1.12.2",
+    "sinon-chai": "^2.6.0"
   }
 }

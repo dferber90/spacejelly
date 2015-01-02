@@ -24,7 +24,7 @@ This package starts your [Meteor](https://github.com/meteor/meteor) app, spawns 
 
 - [Installation](#installation)
 - [Development](#development)
-   - [Fancy Installation](#fancy-installation
+   - [Fancy Installation](#fancy-installation)
 - [License](#license)
 
 
