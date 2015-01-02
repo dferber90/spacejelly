@@ -1,16 +1,11 @@
 **THIS IS STILL BEING WORKED ON. DO NOT USE YET.**
 
 # Spacejelly
-Run UI tests on Meteor apps with phantomjs and nightwatch.
-
 
 An npm package to run end-to-end tests on your Meteor app.
 Use in continuous integration environments, such as Travis CI.
 
-This package starts your [Meteor](https://github.com/meteor/meteor) app, spawns a [Selenium](https://code.google.com/p/selenium/) Server (Jar-File is provided), and runs the [Nightwatch](https://github.com/beatfactor/nightwatch/) tests.
-
-Then, it finishes using a semantic exit code. This package is ideal for CI environments.
-
+This package starts your [Meteor](https://github.com/meteor/meteor) app, spawns a [Selenium](https://code.google.com/p/selenium/) Server (Jar-File is provided), and runs the [Nightwatch](https://github.com/beatfactor/nightwatch/) tests. Then, it finishes using a semantic exit code.
 
 ## Quickstart
     
@@ -18,7 +13,8 @@ Then, it finishes using a semantic exit code. This package is ideal for CI envir
     $ npm install spacejelly -g
 
     # 2) create config file
-    # you currently have to do this manually.
+    # you currently have to create this manually.
+    # Example config: examples/leaderboard/tests/spacejelly/spacejelly.js
 
     # run spacejelly
     $ spacejelly
@@ -28,8 +24,7 @@ Then, it finishes using a semantic exit code. This package is ideal for CI envir
 
 - [Installation](#installation)
 - [Development](#development)
-   - [Fancy Installation](#fancy-installation)
-
+   - [Fancy Installation](#fancy-installation
 - [License](#license)
 
 
