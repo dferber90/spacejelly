@@ -5,6 +5,9 @@ var sinonChai = require('sinon-chai');
 chai.use(sinonChai);
 var sinon = require("sinon");
 
+// -----------------------------------------------------------------
+// 							stubs
+// -----------------------------------------------------------------
 
 var childProcessStub = {
 	spawn: function (cmd, meteorArgs, runtimeOptions) {
@@ -25,9 +28,18 @@ var childProcessStub = {
 	}
 };
 
+// -----------------------------------------------------------------
+// 							require
+// -----------------------------------------------------------------
+
 var Meteor = proxyquire('../../lib/Meteor', {
 	'child_process': childProcessStub
 });
+
+
+// -----------------------------------------------------------------
+// 							tests
+// -----------------------------------------------------------------
 
 describe('Meteor', function () {
 	'use strict';
