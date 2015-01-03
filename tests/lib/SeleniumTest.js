@@ -49,6 +49,10 @@ describe('Selenium', function () {
 
 	var selenium;
 
+	// avoid warning of listeners, because we create so many selenium-objects here
+	// (node) warning: possible EventEmitter memory leak detected. 11 listeners added. Use emitter.setMaxListeners() to increase limit.
+	process.setMaxListeners(99);
+
 	beforeEach(function () {
 		selenium = new Selenium();
 	});
@@ -156,7 +160,36 @@ describe('Selenium', function () {
 			});			
 		});
 
-		
+		describe('stop', function () {
+
+			it('emits the code it was called with', function () {
+				
+				var code = 3;
+				sinon.spy(selenium, 'emit');
+
+				selenium.stop(code);
+				expect(selenium.emit).to.have.been.calledWith('stop', code);
+			});
+
+			it('does not emit "stop" again, if selenium is already stopped', function () {
+
+				sinon.spy(selenium, 'emit');
+				selenium.stop();
+				selenium.stop();
+
+				expect(selenium.emit).to.have.been.calledOnce;
+			});
+
+			it('kills the child process', function () {
+				selenium.childProcess = {
+					kill: sinon.spy()
+				};
+
+				selenium.stop();
+
+				expect(selenium.childProcess.kill).to.have.been.calledOnce;
+			});
+			
+		});
 	});
 });
-	
