@@ -86,6 +86,16 @@ describe('Meteor', function () {
 
 			meteor.start();
 		});
+
+		it('spawns a child process', function () {
+			var meteor = new Meteor();
+
+			sinon.spy(childProcessStub, 'spawn');
+			meteor.start();
+			expect(childProcessStub.spawn).to.have.been.calledOnce;
+			expect(childProcessStub.spawn).to.have.been.calledWith("meteor");
+		});
+		
 		
 	});
 
