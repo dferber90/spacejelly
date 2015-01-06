@@ -5,7 +5,7 @@
 # Spacejelly
 
 An npm package to run end-to-end tests on your Meteor app.
-Use in continuous integration environments, such as Travis CI.
+Use in continuous integration environments, such as [Travis CI](https://travis-ci.org).
 
 This package starts your [Meteor](https://github.com/meteor/meteor) app, spawns a [Selenium](https://code.google.com/p/selenium/) Server (Jar-File is provided), and runs the [Nightwatch](https://github.com/beatfactor/nightwatch/) tests. Then, it finishes using a semantic exit code.
 
@@ -14,18 +14,19 @@ This package starts your [Meteor](https://github.com/meteor/meteor) app, spawns 
     # 1) install
     $ npm install spacejelly -g
 
-    # 2) create config file
-    # you currently have to create this manually.
-    # Example config: examples/leaderboard/tests/spacejelly/spacejelly.js
+    # 2) create nightwatch tests in your meteor app
 
-    # run spacejelly
+    # 3) run spacejelly from meteor app
     $ spacejelly
 
 
 ## Table of Contents
 
 - [Installation](#installation)
-- [Exit Codes](#exit-codes)
+- [Project Setup](#project-setup)
+	- [Configuration](#configuration)
+	- [Exit Codes](#exit-codes)
+- [Example](#example)
 - [Development](#development)
    - [Fancy Installation](#fancy-installation)
 - [License](#license)
@@ -47,31 +48,40 @@ sudo -H npm install -g spacejelly
 ```
 
 
+## Project Setup
 
-## Exit Codes
+### Configuration
+
+### Exit Codes
 
 See [here](https://github.com/joyent/node/blob/master/doc/api/process.markdown#exit-codes) for node exit codes.
 
 Spacejam codes:
 
-* 0: everything was fine. all tests passed.
+*  0: everything was fine. all tests passed.
 * 21: Tests failed.
 * 22: Spacejelly failed.
 * 23: Spacejelly timed out (increase timeout with `-t` flag or in config)
-* 24:Meteor failed to start. There is probably an error within your app. Try starting it on its own. 
+* 24: Meteor failed to start. There is probably an error within your app. Try starting it on its own. 
 * 25: Mongo failed (maybe `meteor reset` may help).
 * 26: Selenium failed.
 * 27: Nightwatch failed.
 
-Run `$?` in terminal to get the exit code of the previous commmand. You can use this to get the exit code of spacejelly by running it after spacejelly finishes.
+> **TIP**
+> Run `$?` in terminal to get the exit code of the previous commmand. You can use this to get the exit code of spacejelly by running it after spacejelly finishes.
 
 See `lib/Spacejelly.js` for up-to-date list.
+
+
+## Example
+
+An example for a Meteor app with Nightwatch tests is provided in `examples/leaderboard`.
+Check out this repository, `$ cd examples/leaderboard` and run `$ spacejelly` to see it in action.
 
 
 
 
 ## Development
-
 
 ### Fancy Installation
 

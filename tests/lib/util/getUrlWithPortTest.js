@@ -4,7 +4,19 @@ var expect = chai.expect;
 var sinonChai = require('sinon-chai');
 chai.use(sinonChai);
 
+
+
+// -----------------------------------------------------------------
+// 							require
+// -----------------------------------------------------------------
+
 var getUrlWithPort = require('../../../lib/util/getUrlWithPort');
+
+
+// -----------------------------------------------------------------
+// 							tests
+// -----------------------------------------------------------------
+
 
 describe('getUrlWithPort', function () {
 	'use strict';
