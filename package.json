@@ -1,6 +1,6 @@
 {
   "name": "spacejelly",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Run nightwatch tests on Meteor projects.",
   "main": "lib/main.js",
   "scripts": {
