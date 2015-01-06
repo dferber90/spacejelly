@@ -1,3 +1,4 @@
+var fs = require('fs');
 var proxyquire = require("proxyquire");
 var chai = require("chai");
 var expect = chai.expect;
@@ -7,29 +8,11 @@ chai.should();
 chai.use(sinonChai);
 
 
-
-
-// -----------------------------------------------------------------
-// 							stubs
-// -----------------------------------------------------------------
-
-var tempWriteStub = {
-	sync: function (contents, fileName) {
-		expect(contents).to.be.a('string').that.is.ok;
-		expect(fileName).to.be.a('string').that.is.ok;
-
-		return '/tmp/xyz/' + fileName;
-	}
-};
-
-
 // -----------------------------------------------------------------
 // 							require
 // -----------------------------------------------------------------
 
-var createTmpJSONFileFromObject = proxyquire('../../../lib/util/createTmpJSONFileFromObject', {
-	'temp-write': tempWriteStub
-});
+var tmp = require('../../../lib/util/tmp');
 
 
 // -----------------------------------------------------------------
@@ -37,34 +20,31 @@ var createTmpJSONFileFromObject = proxyquire('../../../lib/util/createTmpJSONFil
 // -----------------------------------------------------------------
 
 
-describe('createTmpJSONFileFromObject', function () {
+describe('tmp', function () {
 	'use strict';
 
 	var fileName = 'testfile.js',
 		obj = {foo: 'bar'},
 		objAsStr = JSON.stringify(obj, null, 4);
 
-	beforeEach(function () {
-		sinon.spy(tempWriteStub, 'sync');
+
+	var f; // the created tmp file
+
+	it('creates a file', function () {
+		f = tmp.create(fileName, obj);
+		expect(fs.existsSync(f)).to.be.true;
 	});
 
-	afterEach(function () {
-		tempWriteStub.sync.restore();
+	it('returns a path', function () {
+		expect(f).to.be.a('string').that.is.not.empty;
 	});
 
-	it('returns a string', function () {
-		
-		expect(createTmpJSONFileFromObject(fileName, obj)).to.be.a('string').that.is.ok;
+	it('writes the contents', function () {
+		expect(fs.readFileSync(f, {encoding: 'utf8'})).to.equal(objAsStr);
 	});
-	
 
-	it('calls tempWrite with correct parameters', function () {
-
-		createTmpJSONFileFromObject(fileName, obj);
-		expect(tempWriteStub.sync).to.have.been.calledOnce;
-		expect(tempWriteStub.sync).to.have.been.calledWith(objAsStr, fileName);
+	it('removes it afterwards', function () {
+		tmp.remove(f);
+		expect(fs.existsSync(f)).to.be.false;
 	});
-	
-
-
 });

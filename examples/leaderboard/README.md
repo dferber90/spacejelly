@@ -24,5 +24,5 @@ To avoid hard-coding data into your tests, you can use the `tests/spacejelly/dat
 Location of data folder is specified in spacejelly configuration file, under `nightwatch.test_settings.globals` key.
 
 ### Custom assertions and commands
-One example for a custom command, and one example for a assertion is provided in `tests/spacjelly/commands`, or `tests/spacejelly/assertions`, respectively.
+One example for a custom command, and one example for a assertion is provided in `tests/spacejelly/commands`, or `tests/spacejelly/assertions`, respectively.
 
