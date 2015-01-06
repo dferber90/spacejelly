@@ -25,6 +25,7 @@ This package starts your [Meteor](https://github.com/meteor/meteor) app, spawns 
 ## Table of Contents
 
 - [Installation](#installation)
+- [Exit Codes](#exit-codes)
 - [Development](#development)
    - [Fancy Installation](#fancy-installation)
 - [License](#license)
@@ -47,7 +48,24 @@ sudo -H npm install -g spacejelly
 
 
 
+## Exit Codes
 
+See [here](https://github.com/joyent/node/blob/master/doc/api/process.markdown#exit-codes) for node exit codes.
+
+Spacejam codes:
+
+* 0: everything was fine. all tests passed.
+* 21: Tests failed.
+* 22: Spacejelly failed.
+* 23: Spacejelly timed out (increase timeout with `-t` flag or in config)
+* 24:Meteor failed to start. There is probably an error within your app. Try starting it on its own. 
+* 25: Mongo failed (maybe `meteor reset` may help).
+* 26: Selenium failed.
+* 27: Nightwatch failed.
+
+Run `$?` in terminal to get the exit code of the previous commmand. You can use this to get the exit code of spacejelly by running it after spacejelly finishes.
+
+See `lib/Spacejelly.js` for up-to-date list.
 
 
 
