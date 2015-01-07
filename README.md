@@ -25,6 +25,7 @@ This package starts your [Meteor](https://github.com/meteor/meteor) app, spawns 
 - [Installation](#installation)
 - [Project Setup](#project-setup)
 	- [Configuration](#configuration)
+		- [Selenium](#selenium)
 	- [Exit Codes](#exit-codes)
 - [Example](#example)
 - [Development](#development)
@@ -51,6 +52,14 @@ sudo -H npm install -g spacejelly
 ## Project Setup
 
 ### Configuration
+
+#### Selenium
+Tests also use Selenium.
+There is currently an error in v2.44.0, so we use v2.43.1.
+https://github.com/beatfactor/nightwatch/issues/309
+https://code.google.com/p/selenium/issues/detail?id=8088
+
+
 
 ### Exit Codes
 
