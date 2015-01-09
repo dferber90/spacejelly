@@ -1,10 +1,4 @@
-var defaultTimeout = 1000;
-
-var selectors = {
-  leaderboard: '.leaderboard',
-  individualPlayer: '.player'
-};
-
+require('../data/globals');
 
 module.exports = {
 
@@ -16,12 +10,15 @@ module.exports = {
     // browser.globals contains data from /tests/spacejelly/data/dev.js
     // data.username
     // data.password, ..
-    var data = browser.globals;
+    // var data = browser.globals;
+
+    // you could also set them in /tests/spacejelly/data/*.js
+    // and then require them like shown with the globals.
 
     browser
-      .url(baseurl + data.paths.home)
-      .waitForElementPresent('body', defaultTimeout)
-      .waitForElementVisible(selectors.leaderboard, defaultTimeout)
+      .url(baseurl + paths.home)
+      .waitForElementPresent('body', timing.timeout)
+      .waitForElementVisible(selectors.leaderboard, timing.timeout)
       .assert.containsText(selectors.leaderboard, "Ada Lovelace")
   },
 
@@ -35,7 +32,7 @@ module.exports = {
           result.value
         );
       })
-      .assert.tagCountGreaterThan(selectors.individualPlayer, 5)
+      .assert.tagCountGreaterThan(selectors.player, 5)
       .end();
   }
 };
