@@ -16,7 +16,7 @@ module.exports = {
     // and then require them like shown with the globals.
 
     browser
-      .url(baseurl + paths.home)
+      .url(baseurl + route.home)
       .waitForElementPresent('body', timing.timeout)
       .waitForElementVisible(selectors.leaderboard, timing.timeout)
       .assert.containsText(selectors.leaderboard, "Ada Lovelace")
